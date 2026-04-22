@@ -1,14 +1,14 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Check, Home, User, Users, Settings } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, Home, User, Users, Settings, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StepWelcome } from "@/components/onboarding/StepWelcome";
 import { StepProfile } from "@/components/onboarding/StepProfile";
 import { StepHousehold } from "@/components/onboarding/StepHousehold";
 import { StepRoommates } from "@/components/onboarding/StepRoommates";
 import { StepPreferences } from "@/components/onboarding/StepPreferences";
+import { StepLegal } from "@/components/onboarding/StepLegal";
 import { StepComplete } from "@/components/onboarding/StepComplete";
 
 const steps = [
@@ -17,6 +17,7 @@ const steps = [
   { id: "household", title: "Household", icon: Home },
   { id: "roommates", title: "Roommates", icon: Users },
   { id: "preferences", title: "Preferences", icon: Settings },
+  { id: "legal", title: "Legal", icon: FileText },
   { id: "complete", title: "Complete", icon: Check },
 ];
 
@@ -27,6 +28,7 @@ const OnboardingPage = () => {
       name: "",
       nickname: "",
       avatar: "",
+      referralCode: "",
     },
     household: {
       type: "create" as "create" | "join",
@@ -42,6 +44,10 @@ const OnboardingPage = () => {
       reminderTone: "kind",
       currency: "₹",
     },
+    legal: {
+      acceptedPrivacy: false,
+      acceptedTerms: false,
+    },
   });
   const navigate = useNavigate();
 
@@ -53,6 +59,14 @@ const OnboardingPage = () => {
   };
 
   const nextStep = () => {
+    // Check if legal step is complete
+    if (currentStep === steps.length - 2) { // Legal step is second to last
+      if (!formData.legal.acceptedPrivacy || !formData.legal.acceptedTerms) {
+        // Show error or alert that both must be accepted
+        return;
+      }
+    }
+    
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     }
@@ -104,6 +118,13 @@ const OnboardingPage = () => {
           />
         );
       case 5:
+        return (
+          <StepLegal
+            data={formData.legal}
+            updateData={(data) => updateFormData("legal", data)}
+          />
+        );
+      case 6:
         return <StepComplete formData={formData} onComplete={handleComplete} />;
       default:
         return null;
@@ -151,7 +172,7 @@ const OnboardingPage = () => {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col p-4 max-w-md mx-auto w-full">
+      <div className="flex-1 container max-w-2xl mx-auto px-4 py-8">
         <motion.div
           key={currentStep}
           initial={{ opacity: 0, x: 20 }}
@@ -173,7 +194,11 @@ const OnboardingPage = () => {
             >
               <ChevronLeft className="mr-2 h-4 w-4" /> Back
             </Button>
-            <Button onClick={nextStep} className="flex items-center">
+            <Button 
+              onClick={nextStep} 
+              className="flex items-center"
+              disabled={currentStep === steps.length - 2 && (!formData.legal.acceptedPrivacy || !formData.legal.acceptedTerms)}
+            >
               Next <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

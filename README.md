@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# 🏠 Roomi AI Harmony
 
-## Project info
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-4.5.0-purple.svg)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-38B2AC.svg)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**URL**: https://lovable.dev/projects/f131d9b6-d221-4da8-a3c8-2d1a6decaa79
+> 🌟 A modern, AI-powered roommate management platform that streamlines household coordination, expense tracking, and communication.
 
-## How can I edit this code?
+## 📋 Meta Description
 
-There are several ways of editing your application.
+```meta
+name: Roomi AI Harmony
+description: Smart roommate management application for modern shared living
+keywords: roommate management, expense tracking, chores management, shared living, household coordination
+version: 1.0.0
+author: Your Name
+license: MIT
+framework: React + TypeScript
+UI: Tailwind CSS + Radix UI
+backend: Supabase
+```
 
-**Use Lovable**
+Roomi AI Harmony is a modern roommate management application built with React and TypeScript, designed to make living with roommates easier and more organized.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f131d9b6-d221-4da8-a3c8-2d1a6decaa79) and start prompting.
+## ✨ Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📊 **Expense Tracking**: Split bills and track shared expenses
+- ✅ **Chores Management**: Organize and track household tasks
+- 🔔 **Smart Reminders**: Never miss important payments or tasks
+- 💬 **Group Chat**: Built-in communication platform for roommates
+- 🎯 **Feature Voting**: Democratic decision-making for house rules and features
+- 🌐 **Multi-language Support**: Accessible in multiple languages
+- 💰 **Currency Management**: Handle expenses in different currencies
+- ⚡ **Premium Features**: Access advanced features with subscription
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Authentication**: Supabase
+- **Animations**: Framer Motion
+- **State Management**: React Context
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js (v16 or higher)
+- npm or yarn
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/roomi-ai-harmony.git
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Navigate to project directory
+cd roomi-ai-harmony
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🔧 Configuration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the root directory with your Supabase credentials:
 
-**Use GitHub Codespaces**
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Key Features Implementation
 
-## What technologies are used for this project?
+- **Page Transitions**: Smooth 2-second transitions between pages with loading animations
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Theme Support**: Light and dark mode with system preference detection
+- **Real-time Updates**: Instant updates for expenses and chores
 
-This project is built with:
+## 🤝 Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## How can I deploy this project?
+## 📄 License
 
-Simply open [Lovable](https://lovable.dev/projects/f131d9b6-d221-4da8-a3c8-2d1a6decaa79) and click on Share -> Publish.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Can I connect a custom domain to my Lovable project?
+## 🙏 Acknowledgments
 
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [Radix UI](https://www.radix-ui.com/) for the accessible component primitives
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Supabase](https://supabase.com/) for authentication and backend services
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Card,
@@ -80,24 +79,21 @@ export const ReminderGenerator = () => {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="text-lg font-medium">AI Reminder</CardTitle>
-        <CardDescription>
-          Generate friendly reminders for your roommates
+      <CardHeader className="pb-2">
+        <CardTitle className="text-base sm:text-lg font-medium">AI Reminder Generator</CardTitle>
+        <CardDescription className="text-xs sm:text-sm">
+          Generate friendly reminders for chores and expenses
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <label htmlFor="reminder-type" className="text-sm font-medium">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="space-y-1 sm:space-y-2">
+              <label htmlFor="type" className="text-xs sm:text-sm font-medium">
                 Reminder Type
               </label>
-              <Select
-                value={reminderType}
-                onValueChange={setReminderType}
-              >
-                <SelectTrigger id="reminder-type">
+              <Select value={reminderType} onValueChange={setReminderType}>
+                <SelectTrigger id="type" className="h-8 sm:h-9">
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -109,66 +105,64 @@ export const ReminderGenerator = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-2">
-              <label htmlFor="tone" className="text-sm font-medium">
+
+            <div className="space-y-1 sm:space-y-2">
+              <label htmlFor="tone" className="text-xs sm:text-sm font-medium">
                 Tone
               </label>
-              <Select
-                value={tone}
-                onValueChange={setTone}
-              >
-                <SelectTrigger id="tone">
+              <Select value={tone} onValueChange={setTone}>
+                <SelectTrigger id="tone" className="h-8 sm:h-9">
                   <SelectValue placeholder="Select tone" />
                 </SelectTrigger>
                 <SelectContent>
-                  {toneOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
+                  {toneOptions.map((tone) => (
+                    <SelectItem key={tone.value} value={tone.value}>
+                      {tone.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-1 sm:space-y-2">
+              <label htmlFor="roommate" className="text-xs sm:text-sm font-medium">
+                Roommate
+              </label>
+              <Select value={selectedRoommate} onValueChange={setSelectedRoommate}>
+                <SelectTrigger id="roommate" className="h-8 sm:h-9">
+                  <SelectValue placeholder="Select roommate" />
+                </SelectTrigger>
+                <SelectContent>
+                  {roommates.map((roommate) => (
+                    <SelectItem key={roommate.value} value={roommate.value}>
+                      {roommate.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
-          <div className="space-y-2">
-            <label htmlFor="roommate" className="text-sm font-medium">
-              Roommate
-            </label>
-            <Select
-              value={selectedRoommate}
-              onValueChange={setSelectedRoommate}
-            >
-              <SelectTrigger id="roommate">
-                <SelectValue placeholder="Select roommate" />
-              </SelectTrigger>
-              <SelectContent>
-                {roommates.map((roommate) => (
-                  <SelectItem key={roommate.value} value={roommate.value}>
-                    {roommate.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+
           <Button
             onClick={handleGenerate}
-            className="w-full bg-brand-purple hover:bg-brand-purple-dark"
+            className="w-full h-8 sm:h-9 bg-brand-purple hover:bg-brand-purple-dark text-xs sm:text-sm"
             disabled={isGenerating}
           >
-            <Sparkles className="mr-2 h-4 w-4" />
+            <Sparkles className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             {isGenerating ? "Generating..." : "Generate Reminder"}
           </Button>
         </div>
+
         {generatedText && (
-          <div className="mt-4 p-3 bg-brand-purple-light rounded-lg">
-            <p className="text-brand-purple-dark">{generatedText}</p>
+          <div className="mt-3 sm:mt-4 p-2 sm:p-3 bg-brand-purple-light rounded-lg">
+            <p className="text-xs sm:text-sm text-brand-purple-dark">{generatedText}</p>
           </div>
         )}
       </CardContent>
       {generatedText && (
         <CardFooter className="flex justify-end gap-2">
-          <Button variant="outline">Edit</Button>
-          <Button className="bg-brand-purple hover:bg-brand-purple-dark">
+          <Button variant="outline" className="h-8 sm:h-9 text-xs sm:text-sm">Edit</Button>
+          <Button className="h-8 sm:h-9 bg-brand-purple hover:bg-brand-purple-dark text-xs sm:text-sm">
             Send
           </Button>
         </CardFooter>

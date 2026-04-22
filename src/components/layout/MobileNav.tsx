@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Receipt, ClipboardCheck, MessageCircle, Settings } from "lucide-react";
+import { Home, Receipt, ClipboardCheck, MessageCircle, Settings, MessageSquare } from "lucide-react";
 
 export const MobileNav = () => {
   const location = useLocation();
@@ -28,6 +27,11 @@ export const MobileNav = () => {
       path: "/reminders",
     },
     {
+      name: "Chat",
+      icon: MessageSquare,
+      path: "/chat",
+    },
+    {
       name: "Settings",
       icon: Settings,
       path: "/settings",
@@ -36,7 +40,7 @@ export const MobileNav = () => {
 
   return (
     <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-background border-t border-border">
-      <div className="grid h-full grid-cols-5">
+      <div className="grid h-full grid-cols-6">
         {navItems.map((item) => (
           <Link
             key={item.name}

@@ -1,3 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Base Styles ========== */
+@layer base {
+  :root {
+    /* Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 270 90% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 90% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 90% 13%;
+
+    --primary: 280 72% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 70% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 10% 96%;
+    --muted-foreground: 270 10% 45%;
+    --accent: 280 72% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 90%;
+    --input: 270 10% 90%;
+    --ring: 280 72% 38%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: 270 90% 13%;
+    --foreground: 300 20% 97%;
+    --card: 270 90% 13%;
+    --card-foreground: 300 20% 97%;
+    --popover: 270 90% 13%;
+    --popover-foreground: 300 20% 97%;
+
+    --primary: 280 72% 38%;
+    --primary-foreground: 300 20% 97%;
+    --secondary: 280 70% 58%;
+    --secondary-foreground: 300 20% 97%;
+
+    --muted: 270 90% 15%;
+    --muted-foreground: 300 20% 80%;
+    --accent: 280 72% 38%;
+    --accent-foreground: 300 20% 97%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 300 20% 97%;
+
+    --border: 270 90% 15%;
+    --input: 270 90% 15%;
+    --ring: 280 72% 38%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ========== Custom Colors ========== */
+:root {
+  --midnight-plum: #2E1A47;
+  --royal-amethyst: #663399;
+  --soft-violet: #A3779D;
+  --lilac-mist: #E6C7E6;
+}
+
+/* ========== Layout ========== */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +84,7 @@
   text-align: center;
 }
 
+/* ========== Logo Animation ========== */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -17,26 +97,116 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* ========== Components ========== */
 .card {
-  padding: 2em;
+  @apply bg-card border border-border rounded-[var(--radius)] p-8;
+  color: var(--foreground);
 }
 
-.read-the-docs {
-  color: #888;
+.glass-effect {
+  background: rgba(230, 199, 230, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 199, 230, 0.2);
+}
+.glow-effect {
+  box-shadow: 0 0 20px rgba(230, 199, 230, 0.3);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--royal-amethyst);
+  color: var(--lilac-mist);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #7a3db3;
+  transform: translateY(-1px);
+}
+
+/* Inputs */
+.input {
+  background: var(--midnight-plum);
+  border: 1px solid var(--soft-violet);
+  border-radius: var(--radius);
+  color: var(--lilac-mist);
+}
+.input:focus {
+  border-color: var(--royal-amethyst);
+  box-shadow: 0 0 0 2px rgba(102, 51, 153, 0.2);
+}
+
+/* Message Bubbles */
+.message-bubble {
+  background: var(--midnight-plum);
+  border: 1px solid var(--soft-violet);
+  color: var(--lilac-mist);
+}
+.message-bubble.primary {
+  background: var(--royal-amethyst);
+}
+.message-bubble.secondary {
+  background: var(--soft-violet);
+  color: var(--midnight-plum);
+}
+
+/* ========== Elements ========== */
+.header, header, nav, footer, form, table, .modal, .container {
+  background-color: var(--midnight-plum);
+  border: 1px solid var(--soft-violet);
+  color: var(--lilac-mist);
+}
+nav a, label, th, td {
+  color: var(--lilac-mist);
+}
+a {
+  color: var(--royal-amethyst);
+}
+nav a:hover, a:hover {
+  color: var(--soft-violet);
+}
+button, input, textarea, select {
+  background-color: var(--midnight-plum);
+  border: 1px solid var(--soft-violet);
+  color: var(--lilac-mist);
+}
+button:hover {
+  background-color: #8a2cbc;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--royal-amethyst);
+  box-shadow: 0 0 0 2px rgba(122, 28, 172, 0.2);
+}
+.alert {
+  background-color: var(--soft-violet);
+  color: var(--midnight-plum);
+  border: 1px solid var(--royal-amethyst);
+}
+.modal-header {
+  background-color: var(--royal-amethyst);
+  color: var(--lilac-mist);
+}
+
+/* ========== Scrollbars ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--midnight-plum);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--royal-amethyst);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a2cbc;
 }
