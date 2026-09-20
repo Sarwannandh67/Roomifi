@@ -32,7 +32,7 @@ Roomi AI Harmony is a modern roommate management application built with React an
 - 🎯 **Feature Voting**: Democratic decision-making for house rules and features
 - 🌐 **Multi-language Support**: Accessible in multiple languages
 - 💰 **Currency Management**: Handle expenses in different currencies
-- ⚡ **Premium Features**: Access advanced features with subscription
+ **Premium Features**: Access advanced features with subscription
 
 ## 🛠️ Tech Stack
 
