@@ -1,12 +1,11 @@
-# 🏠 Roomi AI Harmony
+# Roomi AI Harmony
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-4.5.0-purple.svg)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-38B2AC.svg)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF.svg)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
 
-> A modern, AI-powered roommate management platform that streamlines household coordination, expense tracking, and communication.
+> A modern roommate management application for coordinating households, tracking expenses, and staying connected.
 
 ## 📋 Meta Description
 
@@ -56,10 +55,10 @@ Roomi AI Harmony is a modern roommate management application built with React an
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/roomi-ai-harmony.git
+git clone https://github.com/Sarwannandh67/Roomifi.git
 
 # Navigate to project directory
-cd roomi-ai-harmony
+cd Roomifi
 
 # Install dependencies
 npm install
@@ -68,14 +67,31 @@ npm install
 npm run dev
 ```
 
+The development server is available at `http://localhost:5173`.
+
+### Available Scripts
+
+```bash
+npm run dev      # Start the Vite development server
+npm run build    # Create a production build
+npm run lint     # Run ESLint
+npm run preview  # Preview the production build locally
+```
+
 ## 🔧 Configuration
 
-Create a `.env` file in the root directory with your Supabase credentials:
+Create a `.env` file in the project root with your Supabase credentials. Do not commit real credentials:
 
 ```env
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+## Project Structure
+
+- `src/` - React components, pages, hooks, and application logic
+- `public/` - Static assets served by Vite
+- `supabase/` - Supabase configuration and database-related files
 
 ## 📱 Key Features Implementation
 
