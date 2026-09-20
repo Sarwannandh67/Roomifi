@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-38B2AC.svg)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> 🌟 A modern, AI-powered roommate management platform that streamlines household coordination, expense tracking, and communication.
+> A modern, AI-powered roommate management platform that streamlines household coordination, expense tracking, and communication.
 
 ## 📋 Meta Description
 
