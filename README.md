@@ -23,7 +23,7 @@ backend: Supabase
 
 Roomi AI Harmony is a modern roommate management application built with React and TypeScript, designed to make living with roommates easier and more organized.
 
-## ✨ Features
+## Features
 
 - 📊 **Expense Tracking**: Split bills and track shared expenses
 - ✅ **Chores Management**: Organize and track household tasks
